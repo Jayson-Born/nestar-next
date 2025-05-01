@@ -4,43 +4,41 @@ import { gql } from '@apollo/client';
  *         MEMBER         *
  *************************/
 
-export const GET_AGENTS = gql`
-	query GetAgents($input: AgentsInquiry!) {
-		getAgents(input: $input) {
-			list {
-				_id
-				memberType
-				memberStatus
-				memberAuthType
-				memberPhone
-				memberNick
-				memberFullName
-				memberImage
-				memberAddress
-				memberDesc
-				memberWarnings
-				memberBlocks
-				memberProperties
-				memberRank
-				memberPoints
-				memberLikes
-				memberViews
-				deletedAt
-				createdAt
-				updatedAt
-				accessToken
-				meLiked {
-					memberId
-					likeRefId
-					myFavorite
-				}
-			}
-			metaCounter {
-				total
-			}
-		}
-	}
-`;
+export const GET_AGENTS = gql(`
+		query GetMember($input: String!) {
+ 		getMember(memberId: $input) {
+ 			_id
+ 			memberType
+ 			memberStatus
+ 			memberAuthType
+ 			memberPhone
+ 			memberNick
+ 			memberFullName
+ 			memberImage
+ 			memberAddress
+ 			memberDesc
+ 			memberProperties
+ 			memberArticles
+ 			memberPoints
+ 			memberLikes
+ 			memberViews
+ 			memberFollowings
+ 					memberFollowers
+ 			memberRank
+ 			memberWarnings
+ 			memberBlocks
+ 			deletedAt
+ 			createdAt
+ 			updatedAt
+ 			accessToken
+ 			meFollowed {
+ 						followingId
+ 						followerId
+ 						myFollowing
+ 					}
+ 		}
+ 	}
+`);
 
 export const GET_MEMBER = gql(`
 query GetMember($input: String!) {
