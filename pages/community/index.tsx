@@ -180,11 +180,13 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 										<Stack className="list-box">
 											{totalCount ? (
 												boardArticles?.map((boardArticle: BoardArticle) => {
-													return
+													return(
  														<CommunityCard
  															boardArticle={boardArticle}
  															key={boardArticle?._id}
- 															likeArticleHandler={likeArticleHandler} />;
+															 likeArticleHandler={likeArticleHandler}
+															 />
+														 );
 												})
 											) : (
 												<Stack className={'no-data'}>
@@ -198,11 +200,13 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 										<Stack className="list-box">
 											{totalCount ? (
 												boardArticles?.map((boardArticle: BoardArticle) => {
-													return
+													return(
  														<CommunityCard
  															boardArticle={boardArticle}
  															key={boardArticle?._id}
- 															likeArticleHandler={likeArticleHandler} />;
+															 likeArticleHandler={likeArticleHandler}
+															 />
+														 );
 												})
 											) : (
 												<Stack className={'no-data'}>
@@ -216,11 +220,13 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 										<Stack className="list-box">
 											{totalCount ? (
 												boardArticles?.map((boardArticle: BoardArticle) => {
-													return
+													return(
 													<CommunityCard
 														boardArticle={boardArticle}
 														key={boardArticle?._id}
-														likeArticleHandler={likeArticleHandler} />;
+														likeArticleHandler={likeArticleHandler}
+														/>
+													);
 												})
 											) : (
 												<Stack className={'no-data'}>
@@ -234,11 +240,13 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 										<Stack className="list-box">
 											{totalCount ? (
 												boardArticles?.map((boardArticle: BoardArticle) => {
-													return
+													return(
  														<CommunityCard
  															boardArticle={boardArticle}
  															key={boardArticle?._id}
- 															likeArticleHandler={likeArticleHandler} />;
+															 likeArticleHandler={likeArticleHandler}
+															 />
+														 );
 												})
 											) : (
 												<Stack className={'no-data'}>
