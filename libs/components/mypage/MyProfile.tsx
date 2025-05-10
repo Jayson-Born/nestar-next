@@ -78,9 +78,7 @@ const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
 			console.log('Error, uploadImage:', err);
 		}
 	};
-
-	const updateMemberHandler = useCallback(async () => {
-		try {
+	const updatePropertyHandler = useCallback(async () => {	try {
 			if (!user._id) throw new Error(Messages.error2);
 			updateData._id = user._id;
 			const result = await updateMember({
@@ -93,7 +91,7 @@ const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
 			const jwtToken = result.data.updateMember?.accessToken;
 			await updateStorage({ jwtToken });
 			updateUserInfo(result.data.updateMember?.accessToken);
-			await sweetMixinSuccessAlert('Information update successfully');
+			await sweetMixinSuccessAlert('information updated successfully.');
 		} catch (err: any) {
 			sweetErrorHandling(err).then();
 		}
@@ -182,7 +180,7 @@ const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
 						/>
 					</Stack>
 					<Stack className="about-me-box">
-					<Button className="update-button" onClick={updateMemberHandler} disabled={doDisabledCheck()}>
+					<Button className="update-button" onClick={updatePropertyHandler} disabled={doDisabledCheck()}>
 							<Typography>Update Profile</Typography>
 							<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
 								<g clipPath="url(#clip0_7065_6985)">
